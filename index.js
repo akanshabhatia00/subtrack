@@ -9,7 +9,12 @@ const subscriptionRoutes = require('./routes/subscriptionRoutes');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+const allowedOrigins = ['https://subtrack-grd2.vercel.app/']; // replace with your Vercel URL
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 
 // Connect to MongoDB

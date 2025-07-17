@@ -310,7 +310,7 @@ const navigate = useNavigate();
       onSubmit={async (e) => {
         e.preventDefault();
         try {
-          const res = await fetch(`http://localhost:5000/api/subscriptions/${editData}`, {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/subscriptions/${editData}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

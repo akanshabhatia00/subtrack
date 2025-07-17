@@ -6,7 +6,13 @@ const app = express();
 
 connectDB(); // ✅ Connect to MongoDB
 
-app.use(cors()); // ✅ Enable CORS for frontend-backend communication
+const allowedOrigins = ['https://subtrack-grd2.vercel.app/']; // replace with your Vercel URL
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+ // ✅ Enable CORS for frontend-backend communication
 app.use(express.json()); // ✅ Middleware to parse JSON requests
 
 const subscriptionRoutes = require('./routes/subscriptionRoutes');

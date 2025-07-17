@@ -17,7 +17,7 @@ export default function SubscriptionForm() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/api/subscriptions", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/subscriptions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
