@@ -7,7 +7,7 @@ const subscriptionRoutes = require('./routes/subscriptionRoutes');
 // Add others as needed
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = ['https://subtrack-grd2.vercel.app/']; // replace with your Vercel URL
 
