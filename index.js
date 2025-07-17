@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const authRoutes = require('./routes/authRoutes');
-const subscriptionRoutes = require('./routes/subscriptionRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const subscriptionRoutes = require('./src/routes/subscriptionRoutes');
 // Add others as needed
 
 const app = express();
@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
 
 
-const emailRoutes = require('./routes/emailRoutes');
+const emailRoutes = require('./src/routes/emailRoutes');
 app.use('/api/emails', emailRoutes);
 
 app.get('/', (req, res) => {
